@@ -1,0 +1,175 @@
+/* ===================================================================
+   RelatedEntityTagControl – stylesheet
+   =================================================================== */
+
+.tag-control-container {
+    position: relative;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    width: 100%;
+}
+
+/* ── Input wrapper (tags + search input in one box) ── */
+.tag-input-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px;
+    border: 1px solid #8a8886;
+    border-radius: 2px;
+    padding: 4px 8px;
+    min-height: 36px;
+    background: #fff;
+    cursor: text;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.tag-input-wrapper:focus-within {
+    border-color: #0078d4;
+    box-shadow: 0 0 0 1px #0078d4;
+}
+
+/* ── Tag list inside the wrapper ── */
+.tag-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+/* ── Individual tag pill ── */
+.tag {
+    display: inline-flex;
+    align-items: center;
+    background-color: #e1effa;
+    color: #0078d4;
+    border: 1px solid #b3d4f0;
+    border-radius: 12px;
+    padding: 2px 6px 2px 10px;
+    font-size: 12px;
+    gap: 4px;
+    max-width: 220px;
+}
+
+.tag-label {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tag-remove {
+    background: none;
+    border: none;
+    color: #0078d4;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.tag-remove:hover {
+    background-color: #0078d4;
+    color: #fff;
+}
+
+/* ── Keyword search input ── */
+.tag-search-input {
+    border: none;
+    outline: none;
+    flex: 1;
+    min-width: 140px;
+    font-size: 14px;
+    font-family: inherit;
+    padding: 2px 4px;
+    background: transparent;
+    color: #323130;
+}
+
+.tag-search-input::placeholder {
+    color: #a19f9d;
+}
+
+/* ── Dropdown ── */
+.tag-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border: 1px solid #8a8886;
+    border-radius: 2px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    max-height: 240px;
+    overflow-y: auto;
+    z-index: 1000;
+    margin-top: 2px;
+}
+
+.tag-dropdown.hidden {
+    display: none;
+}
+
+.tag-dropdown-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #323130;
+    border-bottom: 1px solid #f3f2f1;
+}
+
+.tag-dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.tag-dropdown-item:hover {
+    background-color: #f3f2f1;
+}
+
+.tag-dropdown-item.no-results {
+    color: #797775;
+    cursor: default;
+    font-style: italic;
+}
+
+/* ── Loading indicator ── */
+.tag-loading {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 8px 12px;
+    background: #fff;
+    border: 1px solid #8a8886;
+    border-radius: 2px;
+    font-size: 14px;
+    color: #797775;
+    font-style: italic;
+    margin-top: 2px;
+    z-index: 1000;
+}
+
+.tag-loading.hidden {
+    display: none;
+}
+
+/* ── Error banner ── */
+.tag-error {
+    margin-top: 4px;
+    padding: 6px 10px;
+    background-color: #fde7e9;
+    border: 1px solid #f1707b;
+    border-radius: 2px;
+    color: #a4262c;
+    font-size: 12px;
+}
+
+.tag-error.hidden {
+    display: none;
+}
