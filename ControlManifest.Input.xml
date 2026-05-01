@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest>
+  <control namespace="xrmatic"
+           constructor="RelatedEntityTagControl"
+           version="1.0.0"
+           display-name-key="RelatedEntityTagControl_DisplayName"
+           description-key="RelatedEntityTagControl_Desc"
+           control-type="standard">
+
+    <!-- Dataset representing the currently associated related records (bound to the subgrid view) -->
+    <data-set name="relatedRecords" display-name-key="relatedRecords_DisplayName"></data-set>
+
+    <!-- Logical name of the field on the related entity to display as the tag label -->
+    <property name="PrimaryFieldName"
+              display-name-key="PrimaryFieldName_Display_Key"
+              description-key="PrimaryFieldName_Desc_Key"
+              of-type="SingleLine.Text"
+              usage="input"
+              required="true" />
+
+    <!-- Comma-separated list of field names on the related entity to include in keyword search -->
+    <property name="SearchFields"
+              display-name-key="SearchFields_Display_Key"
+              description-key="SearchFields_Desc_Key"
+              of-type="SingleLine.Text"
+              usage="input"
+              required="true" />
+
+    <!-- Logical name of the related entity (e.g. "contact", "account", "my_customentity") -->
+    <property name="RelatedEntityName"
+              display-name-key="RelatedEntityName_Display_Key"
+              description-key="RelatedEntityName_Desc_Key"
+              of-type="SingleLine.Text"
+              usage="input"
+              required="true" />
+
+    <!-- Schema name of the relationship used for associate/disassociate calls -->
+    <property name="RelationshipName"
+              display-name-key="RelationshipName_Display_Key"
+              description-key="RelationshipName_Desc_Key"
+              of-type="SingleLine.Text"
+              usage="input"
+              required="true" />
+
+    <resources>
+      <code path="index.ts" order="1" />
+      <css path="css/RelatedEntityTagControl.css" order="1" />
+    </resources>
+  </control>
+</manifest>
